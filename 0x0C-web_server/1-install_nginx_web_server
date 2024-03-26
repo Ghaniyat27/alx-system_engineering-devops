@@ -4,7 +4,8 @@
 # Also, when querying nginx at its root / with a GET
 # request, it returns a page that contains the string
 # 'Hello World!'.
-apt-get -y update
-apt-get -y install nginx
+apt update
+apt install -y nginx
+ufw allow 'Nginx HTTP'
 echo "Hello World!" > /var/www/html/index.html
-service nginx start
+service nginx restart
